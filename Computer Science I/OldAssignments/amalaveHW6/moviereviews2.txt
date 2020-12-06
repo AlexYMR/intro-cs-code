@@ -1,0 +1,9 @@
+#Format: Row
+Ironman	5 4 3
+Batman 4 5 5
+Superman 4 3
+Spiderman 4 5
+Hellboy 3 2
+X-Men 4 3 3
+Transformers 2 3
+Wall-E 5

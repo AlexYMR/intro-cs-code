@@ -1,0 +1,9 @@
+A. Make it easier to test out values by incorporating a way to read user input (although it wasn’t required, I found it to be good for practice).
+
+B. Think about the limiting case for the while loop proposed by the question (of dividing by 2).
+
+C. Find a way to store the quotient (for ending the loop) and remainder (for coming up with the binary result) separately so as to use them later while looping divisions of the number.
+
+D. Find a way to reverse the remainder integers returned by the process in part C.
+
+E. Print the result.

@@ -1,0 +1,8 @@
+﻿
+1)
+A FlyWorld world, GridLocation location, BufferedImage image
+B None
+C None
+D getImage, getLocation, isPredator
+E update
+F update, eatsFly, generateLegalMoves

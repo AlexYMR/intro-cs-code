@@ -1,0 +1,8 @@
+public class Main{
+    public static void main(String[] args){
+	AbstractIntList list = new IntLinkedList();
+	list.add(4);
+	list.add(6);
+	System.out.println(list);
+    }
+}

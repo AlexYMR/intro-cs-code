@@ -1,0 +1,177 @@
+import java.util.Iterator;
+
+/**
+ * Simplified singly-linked-list class
+ *
+ */
+class IntLinkedList extends AbstractIntList 
+
+{
+    Node head;
+    Node tail;
+
+    /**
+     * Initialize the two instance variables.
+     */
+    public IntLinkedList()
+    {
+	head = null;
+	tail = null;
+    }
+
+    /**
+     * Check if the index is valid
+     * If it is not valid, throw an IndexOutOfBoundsException
+     * Otherwise return the int stored at the given index position
+     */
+    public int get(int index)
+    {
+	if(index>=this.numItems){
+	    throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+	}
+	Node curNode = head;
+	for (int i = 0;i<=index;i++){
+	    curNode = curNode.getNext();
+	}
+	return curNode.getValue();
+	
+    }
+
+    /**
+     * Check if the index is valid
+     * If it is not valid, throw an IndexOutOfBoundsException
+     * Otherwise set the int stored at the given index position
+     * to the updated value
+     */
+    public void set(int index, int value)
+    {
+	if(index>=this.numItems){
+	    throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+	}
+	Node curNode = head;
+	for (int i = 0;i<this.numItems;i++){
+	    if (i == index){
+		curNode.setValue(value);
+	    }
+	    curNode = head.getNext();
+	}
+    }
+
+    /**
+     * No index checking necessary
+     */
+    public void add(int value)
+    {
+	if (this.numItems==0){
+	    head = new Node(value);
+	    tail = head;
+	} else {
+	    Node tmp = new Node(value);
+	    tail.setNext(tmp);
+	    tail = tmp;
+	}
+	this.numItems += 1;
+    }
+
+    /**
+     * Check if the index is valid
+     * If it is not valid, throw an IndexOutOfBoundsException
+     * Otherwise add a node with the given  to proper spot
+     * to the linked list
+     */
+    public void add(int index, int value)
+    {
+	if(index>=this.numItems){
+	    throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+	}
+	Node tmp = head;
+	int i = 0;
+	while(tmp != null && i<index-1){
+	    tmp = tmp.getNext();
+	    i++;
+	}
+	if(tmp != null){
+	    Node newNode = new Node(value);
+	    tmp.setNext(newNode);
+	}
+	this.numItems += 1;
+    }
+
+    /**
+     * Check if the index is valid
+     * If it is not valid, throw an IndexOutOfBoundsException
+     * Otherwise remove Node at given index position and return
+     * its value
+     */
+    public int remove(int index)
+    {
+	if(index>=this.numItems){
+	    throw new IndexOutOfBoundsException("Index " + index + " is out of bounds.");
+	}
+	Node tmp = head;
+	int data = tmp.getValue();
+	if(index == 0){
+	    head = tmp.getNext();
+	} else {
+	    int i = 0;
+	    while(tmp != null && i<index-1){
+		tmp = tmp.getNext();
+		i++;
+	    }
+	    if(tmp != null){
+		data = tmp.getNext().getValue();
+		tmp.setNext(tmp.getNext().getNext());
+		tmp.getNext().setNext(null);
+		if(index == this.numItems-1){
+		    tail = tmp.getNext();
+		}
+	    }
+	}
+	return data;
+    }
+
+    /**
+     * No coding needed here
+     * This is to help you with debugging
+     */
+    public String getListHead()
+    {
+	if (head != null)
+	    return head.toString();
+	
+	return null;
+    }
+
+    /**
+     * No coding needed here
+     * This is to help you with debugging
+     */
+    public String getListTail()
+    {
+	if (tail != null)
+	    return tail.toString();
+	
+	return null;
+    }
+
+    /**
+     * No coding needed here
+     * This is to help you with debugging
+     */
+    @Override
+    public String toString()
+    {
+	if (size() == 0)
+	    return "Nothing in list";
+	
+	String s = head.getValue() + "->";
+	Node current = head.getNext();
+	for (int i = 1; i < size(); i++)
+	{
+	    s = s + current.getValue() + "->";
+	    current = current.getNext();
+	}
+
+	return s += "null";
+    }
+}

@@ -1,0 +1,26 @@
+#######################
+# drawflower.py
+# Alex Malave
+# Creates multiple squares based on parameters given via command terminal
+# in order to create a flower-like shape
+#######################
+
+import turtle
+import sys
+
+def drawSquare(turt,sideLength):
+    # creates a square using the given sideLength parameter
+    for i in range(4):
+        turt.forward(sideLength)
+        turt.right(90)
+
+def main():
+    # Draws a flower-like shape made out of squares, each evenly separated
+    turt = turtle.Turtle()
+    sideLength = int(sys.argv[1])
+    for i in range(15):
+        drawSquare(turt,sideLength)
+        turt.right(360/15)
+    turtle.exitonclick()
+
+main()

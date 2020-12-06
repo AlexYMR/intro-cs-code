@@ -1,0 +1,35 @@
+
+public class Queue
+{
+    IntLinkedList list;
+
+    public Queue()
+    {
+	list = new IntLinkedList();
+    }
+
+    public void enqueue(int value)
+    {
+	
+    }
+
+    public int dequeue()
+    {
+	
+    }
+
+    public int peek()
+    {
+	
+    }
+
+    public int size()
+    {
+	
+    }
+
+    public boolean isEmpty()
+    {
+	
+    }
+}

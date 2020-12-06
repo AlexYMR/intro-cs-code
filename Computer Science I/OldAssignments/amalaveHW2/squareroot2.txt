@@ -1,0 +1,9 @@
+Answers for Homework 2, section B of problem 1:
+
+Format: Term - Answer
+*Answers have been left as sums in order to make it clear that I did it by hand
+
+3 - 1+5/12
+4 - 1+12/29
+5 - 1+29/70
+6 - 1+70/169

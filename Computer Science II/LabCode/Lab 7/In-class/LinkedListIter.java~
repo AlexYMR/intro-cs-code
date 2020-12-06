@@ -1,0 +1,33 @@
+import java.util.Iterator;
+
+public class LinkedListIter // ADD SOMETHING HERE 
+{
+    // Instance variable to keep track of current location in list
+    // FILL IN
+
+    public LinkedListIter(// FILL IN)
+    {
+	// FILL IN
+    }
+
+    @Override
+    public boolean hasNext()
+    {
+	// FILL IN
+    }
+
+    @Override
+    public Integer next()
+    {
+	// FILL IN
+    }
+
+    @Override
+    public void remove()
+    {
+	throw new UnsupportedOperationException("Remove via iteration not supported");
+
+    }
+}
+
+    
